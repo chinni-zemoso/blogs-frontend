@@ -9,101 +9,131 @@ import CustomAvatar from '../../atoms/CustomAvatar'
 // import ImageLearnJava from '../../../assets/Ho
 import LearnJavaImage from '../../../assets/How-to-learn-Java.png'
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        width: "494px",
-        // height: "385px",
-        borderRadius: "4px",
-        border: "solid 1px #dfe3eb",
-        boxShadow: `0px 2px 4px ${theme.palette.grey[300]}`,
-        paddingBottom: '12px'
+const useStyles = makeStyles(theme => ({
+    container: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
     },
-    author: {
-        width: "116px",
-        height: "24px",
-        color: theme.palette.grey.A200,
-        overflow: "hidden",
-        whiteSpace: "nowrap",
-        textOverflow: "ellipsis",
-        marginTop: '2px'
+    detailsContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
     },
-    by: {
-        width: "42px",
-        height: "22px",
-        fontFamily: "Roboto",
-        fontSize: "14px",
-        fontWeight: "normal",
-        fontStretch: "normal",
-        fontStyle: "normal",
-        lineHeight: "1.5",
-        letterSpacing: "normal",
-        color: "#6b6c6f",
-        marginLeft: "32px",
-        marginRight: "3px",
-        overflow: "hidden",
-        whiteSpace: "nowrap",
-        textOverflow: "ellipsis"
+    detailsTextContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        marginLeft: '1em',
+        justifyContent: 'space-evenly',
+        // '& > *:not(:first-child)': {
+        //     marginTop: theme.spacing(3),
+        // },
     },
-    cover: {
-        width: "180px",
-        height: "190px",
-        marginTop: "22px",
-        marginRight: "37px",
-        marginLeft: "37px"
+    circularProgress: {
+        alignSelf: 'flex-start',
+        marginLeft: '8px',
+        marginRight: '30px'
     },
-    title: {
-        width: "216px",
-        height: "28px",
-        fontFamily: "Roboto",
-        fontSize: "18px",
-        fontWeight: "500",
-        fontStretch: "normal",
-        fontStyle: "normal",
-        lineHeight: "1.56",
-        letterSpacing: "normal",
-        color: theme.palette.grey.A200,
-        marginTop: "12px",
-        marginLeft: "32px",
-        marginBottom: "6px",
-        overflow: "hidden",
-        whiteSpace: "nowrap",
-        textOverflow: "ellipsis",
-        // '&:hover':{
-        //   overflow:'visible'
-        // }
+    descriptionContainer: {
+        marginTop: '30px',
+        '& > *:not(:first-child)': {
+            marginTop: theme.spacing(2),
+        },
     },
-    star: {
-        width: "15px",
-        height: "14px",
-        marginRight: "5px",
-        marginTop: "3px",
+    dropDownContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+
+        marginTop: '14px'
     },
-}));
+    button: {
+        width: '151px',
+        height: '32px',
+    },
+    bookContainer: {
+        display: 'flex',
+        flexDirection: 'row'
+    },
+    actionButtons: {
+        display: 'flex',
+        justifyContent: 'flex-start',
+        flexDirection: 'row',
+        color: 'iconFill',
+        marginTop: '16px',
+        '& > *:not(:first-child)': {
+            marginLeft: theme.spacing(6),
+        },
+    },
+    imageContainer: {
+        width: '180px'
+    }
+}))
+
 
 export default function BlogContentCard(props) {
     const classes = useStyles()
 
     return (
-        <div className={classes.root}>
-            {/* <div id='blogContentCard' className={classes.root}> */}
-                <Grid container direction="column" alignItems="center" alignContent="center">
-                    <Grid item xs={12}>
-                        {/* <img src={props.image} alt="slow-network" /> */}
-                        <img src={LearnJavaImage} alt="slow-network" />
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Typography variant='h2' className={classes.header} >Instant java learning</Typography>
-                    </Grid>
-                    <Grid item xs>
+        <div >
+            <div className={classes.root}>
+
+                <img className={classes.cover} src={LearnJavaImage} />
+                <div className={classes.title} >
+                    {'Instant java learning'}
+                </div>
+                <div style={{ display: "flex", alignItems: 'center' }}>
+                    {/* <div className={classes.by} >Author</div> */}
+                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                         <CustomAvatar avatarUrl={props.avatarUrl} />
-                        <Typography variant='h6' className={classes.header} >by James Gosling </Typography>
-                    </Grid>
-                    <Grid item xs>
-                        <Typography variant='body1' className={classes.body} style={{ marginBottom: "30px" }}>
-                           This blog walks you through different stages of learning java.
+                        <Typography variant='body2' >
+                            {"by James Gosling"}
                         </Typography>
-                    </Grid>
+                    </div>
+                    <Typography className={classes.author} variant="body2">{'props.author.name'}</Typography>
+                </div>
+                <div>
+                    <div style={{ paddingLeft: '24px', paddingRight: '13px', paddingTop: '12px', paddingBottom: '12px' }}>
+
+                    </div>
+                    <Divider></Divider>
+                    <div style={{ display: "flex", marginTop: "12px", alignItems: "center" }}>
+
+                    </div>
+                   
+                </div>
+            </div>
+
+
+
+            {/* <div id='blogContentCard' className={classes.root}> */}
+            <Grid container direction="column" alignItems="center" alignContent="center">
+                <Grid item xs >
+                    {/* <img src={props.image} alt="slow-network" /> */}
+                    <img src={LearnJavaImage} alt="slow-network" />
                 </Grid>
+                <Grid item xs>
+                    <Typography variant='h2' className={classes.header} >Instant java learning</Typography>
+                </Grid>
+                {/* <Grid item xs> */}
+                {/* <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', marginTop: '8px' }}> */}
+
+
+                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', marginLeft: '8px' }}>
+                    <CustomAvatar avatarUrl={props.avatarUrl} />
+                    <Typography variant='body2' >
+                        {"by James Gosling"}
+                    </Typography>
+                </div>
+
+                {/* </div> */}
+                {/* <Typography variant='h6' className={classes.header} >by James Gosling </Typography> */}
+                {/* </Grid> */}
+                <Grid item xs>
+                    <Typography variant='body1' className={classes.body} style={{ marginBottom: "30px" }}>
+                        This blog walks you through different stages of learning java.
+                        </Typography>
+                </Grid>
+            </Grid>
             {/* </div> */}
 
         </div>
