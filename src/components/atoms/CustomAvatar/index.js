@@ -13,8 +13,8 @@ export default function ImageAvatars(props) {
   const classes = useStyles();
 
   return (
-    // <IconButton>
-      <Avatar alt="Remy Sharp" src={props.avatarUrl}/>
-    // </IconButton>
+    <IconButton>
+      <Avatar alt="image.jpg" src={props.avatarUrl} />
+    </IconButton>
   );
 }
