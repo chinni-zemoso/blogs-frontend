@@ -1,24 +1,16 @@
 import React from 'react'
 import { Typography, Grid, makeStyles } from "@material-ui/core";
-import CustomAvatar from '../../atoms/CustomAvatar'
-import LearnJavaImage from '../../../assets/ML-java.jpg'
+import AuthorWithAvatar from '../../molecules/Author';
+import TextButton from '../../molecules/Button/TextButton/Text';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         width: "550px",
+        height: "380px",
         borderRadius: "6px",
         border: "solid 3px #dfe3eb",
         boxShadow: `0px 2px 4px ${theme.palette.grey[300]}`,
         paddingBottom: '12px'
-    },
-    author: {
-        width: "480px",
-        color: theme.palette.grey.A200,
-        marginTop: '-42px',
-        marginLeft: "59px",
-        overflow: "hidden",
-        whiteSpace: "nowrap",
-        textOverflow: "ellipsis",
     },
     cover: {
         width: "530px",
@@ -44,39 +36,45 @@ const useStyles = makeStyles((theme) => ({
         whiteSpace: "nowrap",
         textOverflow: "ellipsis",
     }, body: {
-        marginLeft: '15px',
+        marginLeft: '12px',
         marginRight: '8px',
-        marginBottom: "30px",
+        // marginBottom: "2px",
+        marginTop: '10px',
         overflow: "hidden",
         whiteSpace: "nowrap",
         textOverflow: "ellipsis",
+    }, authorWithAvatar: {
+        'padding-left': "13px",
+        'padding-bottom': "5px",
+        'padding-top': "5px",
+        width: "528px",
     }
 }));
 
 
 export default function BlogContentCard(props) {
     const classes = useStyles();
-    // const imageUrl = props.image;
     return (
         <Grid container direction="column" alignContent="center" className={classes.root} >
-            <Grid item xs={12}>
-                <img className={classes.cover} src={LearnJavaImage} />
+            <Grid item xs>
+                <img className={classes.cover} src={props.image} />
                 <Typography variant='subtitle1' className={classes.title}>
                     {props.title}
                 </Typography>
             </Grid>
-            <Grid item xs={6}>
-                <CustomAvatar avatarUrl={props.avatarUrl} />
+            <Grid item xs className={classes.authorWithAvatar} style={{overflow:"hidden", textOverflow:"ellipsis"}} >
+                <AuthorWithAvatar
+                    avatarUrl={props.avatarUrl}
+                    author={props.author}
+                    size={props.size} />
             </Grid>
-            <Grid item xs={6}>
-                <Typography className={classes.author} variant='body2'>
-                    by {props.author}
-                </Typography>
-            </Grid>
-            <Grid item xs={12}>
+            <Grid item xs>
                 <Typography variant='body1' className={classes.body}>
                     {props.body}
                 </Typography>
+            </Grid>
+            <Grid item xs style={{marginLeft:'5px'}}>
+                <TextButton />
             </Grid>
         </Grid>
     );

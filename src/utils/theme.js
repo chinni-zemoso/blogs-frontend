@@ -8,7 +8,7 @@ const coef = fontSize / 14;
 
 function pxToRem(value) {
     return `${(value / htmlFontSize) * coef}rem`;
-  }
+}
 
 const theme = createMuiTheme({
     palette: {
@@ -23,8 +23,8 @@ const theme = createMuiTheme({
         },
         error: {
             main: '#e6492d'
-          },
-        warning:{
+        },
+        warning: {
             main: '#facf55'
         },
         grey: {
@@ -40,12 +40,12 @@ const theme = createMuiTheme({
             900: '#2d3e50',
             A200: '#3e3f42',
             icon500: '#9EA0A5'
-          },
+        },
     },
     spacing: 4,
     typography: {
         fontFamily: 'Roboto',
-        h1:{
+        h1: {
             fontSize: pxToRem(36),
             fontWeight: 'bold',
             fontStretch: 'normal',
@@ -53,7 +53,7 @@ const theme = createMuiTheme({
             lineHeight: '1.39',
             letterSpacing: 'normal'
         },
-        h2:{
+        h2: {
             fontSize: pxToRem(36),
             fontWeight: 'normal',
             fontStretch: 'normal',
@@ -61,7 +61,7 @@ const theme = createMuiTheme({
             lineHeight: '1.39',
             letterSpacing: 'normal'
         },
-        h3:{
+        h3: {
             fontSize: pxToRem(30),
             fontWeight: 'bold',
             fontStretch: 'normal',
@@ -69,7 +69,7 @@ const theme = createMuiTheme({
             lineHeight: '1.67',
             letterSpacing: 'normal'
         },
-        h4:{
+        h4: {
             fontSize: pxToRem(26),
             fontWeight: 500,
             fontStretch: 'normal',
@@ -77,7 +77,7 @@ const theme = createMuiTheme({
             lineHeight: '1.46',
             letterSpacing: 'normal'
         },
-        h5:{
+        h5: {
             fontSize: pxToRem(22),
             fontWeight: 500,
             fontStretch: 'normal',
@@ -85,7 +85,7 @@ const theme = createMuiTheme({
             lineHeight: '1.45',
             letterSpacing: 'normal'
         },
-        h6:{
+        h6: {
             fontSize: pxToRem(18),
             fontWeight: 'normal',
             fontStretch: 'normal',
@@ -93,7 +93,7 @@ const theme = createMuiTheme({
             lineHeight: '1.56',
             letterSpacing: 'normal'
         },
-        subtitle1:{
+        subtitle1: {
             fontSize: pxToRem(20),
             fontWeight: 500,
             fontStretch: 'normal',
@@ -101,7 +101,7 @@ const theme = createMuiTheme({
             lineHeight: '1.5',
             letterSpacing: 'normal'
         },
-        subtitle2:{
+        subtitle2: {
             fontSize: pxToRem(20),
             fontWeight: 'normal',
             fontStretch: 'normal',
@@ -109,7 +109,7 @@ const theme = createMuiTheme({
             lineHeight: '1.5',
             letterSpacing: 'normal'
         },
-        body1:{
+        body1: {
             fontSize: pxToRem(16),
             fontWeight: 500,
             fontStretch: 'normal',
@@ -117,7 +117,7 @@ const theme = createMuiTheme({
             lineHeight: '1.5',
             letterSpacing: 'normal'
         },
-        body2:{
+        body2: {
             fontSize: pxToRem(14),
             fontWeight: 'normal',
             fontStretch: 'normal',
@@ -125,7 +125,7 @@ const theme = createMuiTheme({
             lineHeight: '1.57',
             letterSpacing: 'normal'
         },
-        caption:{
+        caption: {
             fontSize: pxToRem(12),
             fontWeight: 500,
             fontStretch: 'normal',
@@ -135,7 +135,7 @@ const theme = createMuiTheme({
         }
     },
     overrides: {
-      },
+    },
 });
 
 export default theme;

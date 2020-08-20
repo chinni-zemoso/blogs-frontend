@@ -4,13 +4,18 @@ import CustomAvatar from '../CustomAvatar'
 
 
 export default {
-    title : 'atoms/Avatar',
-    component: CustomAvatar,
+    title: 'atoms/Avatar',
     decorators: [withKnobs]
 }
 
-export const Avatar = () => {
+export const Basic = () => {
     return (
-        <CustomAvatar avatarUrl = {text('url', '')}/>
+        <CustomAvatar avatarUrl={text('url', '')} size={text('size', '')} />
+    )
+}
+
+export const Large = () => {
+    return (
+        <CustomAvatar avatarUrl={text('url', '')} size='large' />
     )
 }

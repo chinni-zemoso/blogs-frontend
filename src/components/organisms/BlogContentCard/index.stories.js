@@ -4,7 +4,7 @@ import BlogContentCard from '.'
 import { text, withKnobs } from '@storybook/addon-knobs'
 
 const props = {
-    image: "../../assets/How-to-learn-Java.png",
+    image: "../../assets/ML-java.jpg",
     title: "Instant Java Leanrning",
     author: "James Gosling",
     avatarUrl: "",
@@ -12,13 +12,13 @@ const props = {
 };
 
 export default {
-    // component: BlogContentCard,
-    title: 'molecules/BlogContentCard',
+    title: 'organism/BlogContentCard',
     decorators: [withKnobs],
 };
 
 export const WithKnobs = () => (
     <BlogContentCard
+        image={text('Image', '')}
         title={text('Title', '')}
         author={text('Author', '')}
         avatarUrl={text('AvatarURL', '')}
@@ -26,5 +26,5 @@ export const WithKnobs = () => (
     />
 );
 export const WithoutKnobs = () => (
-    <BlogContentCard {...props}/>
+    <BlogContentCard {...props} />
 );

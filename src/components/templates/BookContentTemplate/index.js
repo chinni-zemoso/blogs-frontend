@@ -19,14 +19,12 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export default function BookContentTemplate(props) {
-
     const classes = useStyles();
+    const blogsList = props.blogContentCardList;
 
     return (
-        <div id='container' className={classes.container}>
-            {props.blogContentCard}
-            {props.blogContentCard}
-        </div >
-       
+        <div className={classes.container}>
+            {blogsList}
+        </div>
     )
 }

@@ -1,0 +1,1 @@
+export const buttonText = "#32CD32";
