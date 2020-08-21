@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export const useHttp = (url, dependencies) => {
-  const [fetchedData, setFetchedData] = useState(null);
+  const [fetchedData, setFetchedData] = useState([]);
 
   useEffect(() => {
     console.log('Sending Http request to URL: ' + url);
@@ -11,7 +11,7 @@ export const useHttp = (url, dependencies) => {
           throw new Error('Failed to fetch.');
         }
         return response.json();
-        
+
       })
       .then(data => {
         setFetchedData(data);
