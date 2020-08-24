@@ -4,7 +4,7 @@ import AuthorWithAvatar from './index';
 
 const props = {
   author: "James Gosling",
-  avatarUrl: "",
+  avatarUrl: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
 };
 
 
@@ -15,10 +15,11 @@ export default {
 
 export const WithKnobs = () => (
   <AuthorWithAvatar
-    author={text('Author', '')}
-    avatarUrl={text('AvatarURL', '')}
+    author={text('Author', 'James Gosling')}
+    avatarUrl={text('AvatarURL', 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50')}
   />
 );
+
 export const WithoutKnobs = () => (
   <AuthorWithAvatar {...props} />
 );

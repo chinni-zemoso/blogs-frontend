@@ -2,11 +2,16 @@ import React from 'react'
 import { Typography, Grid, makeStyles } from "@material-ui/core";
 import AuthorWithAvatar from '../../molecules/Author';
 import TextButton from '../../molecules/Button/TextButton/Text';
-
+import Comments from '../../molecules/Comments/Comments'
 const useStyles = makeStyles((theme) => ({
     root: {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-around",
+        flexWrap: "nowrap",
+        alignContent: "space-between",
         width: "550px",
-        height: "380px",
+        // height: 'auto',
         borderRadius: "6px",
         border: "solid 3px #dfe3eb",
         boxShadow: `0px 2px 4px ${theme.palette.grey[300]}`,
@@ -22,23 +27,13 @@ const useStyles = makeStyles((theme) => ({
     title: {
         width: "530px",
         height: "28px",
-        fontFamily: "Roboto",
-        fontSize: "18px",
-        fontWeight: "500",
-        fontStretch: "normal",
-        fontStyle: "normal",
-        lineHeight: "1.56",
-        marginTop: '6px',
-        marginLeft: '13px',
-        letterSpacing: "normal",
-        color: theme.palette.grey.A200,
+        marginLeft: '12px',
         overflow: "hidden",
         whiteSpace: "nowrap",
         textOverflow: "ellipsis",
     }, body: {
         marginLeft: '12px',
         marginRight: '8px',
-        // marginBottom: "2px",
         marginTop: '10px',
         overflow: "hidden",
         whiteSpace: "nowrap",
@@ -47,13 +42,14 @@ const useStyles = makeStyles((theme) => ({
         'padding-left': "13px",
         'padding-bottom': "5px",
         'padding-top': "5px",
-        width: "528px",
+        width: "530px",
     }
 }));
 
 
 export default function BlogContentCard(props) {
     const classes = useStyles();
+    console.log("comments" + props.comments)
     return (
         <Grid container direction="column" alignContent="center" className={classes.root} >
             <Grid item xs>
@@ -62,19 +58,25 @@ export default function BlogContentCard(props) {
                     {props.title}
                 </Typography>
             </Grid>
-            <Grid item xs className={classes.authorWithAvatar} style={{overflow:"hidden", textOverflow:"ellipsis"}} >
+            <Grid item xs className={classes.authorWithAvatar}  >
                 <AuthorWithAvatar
                     avatarUrl={props.avatarUrl}
                     author={props.author}
                     size={props.size} />
             </Grid>
             <Grid item xs>
-                <Typography variant='body1' className={classes.body}>
+                <Typography variant='body1' className={classes.body} >
                     {props.body}
                 </Typography>
             </Grid>
-            <Grid item xs style={{marginLeft:'5px'}}>
+            <Grid item xs style={{ marginLeft: '5px' }}>
                 <TextButton />
+            </Grid>
+            <Grid item xs style={{ marginLeft: '12px' }}>
+                <Typography variant='subtitle1'>
+                    Comments
+                 </Typography>
+                <Comments comments={props.comments} />
             </Grid>
         </Grid>
     );

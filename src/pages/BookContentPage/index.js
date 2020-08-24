@@ -3,12 +3,12 @@ import BlogContentTemplate from '../../components/templates/BookContentTemplate'
 import BlogContentCard from '../../components/organisms/BlogContentCard';
 import blogsList from '../../utils/blogList.json'
 import { useHttp } from '../../utils/hooks/http'
-import {urls }from '../../utils/serviceConstants'
+import { urls } from '../../utils/serviceConstants'
+import CustomMenu from '../../components/atoms/CustomMenu';
+import CustomMenuList from '../../components/molecules/CustomMenuList';
+import CustomMenuItem from '../../components/atoms/CustomMenuItem';
 
 export default function BlogContentPage() {
-
-    const [blogsList, setBlogsList] = useState([])
-    [blogsList] = useHttp(urls.getAllBlogsUrl, [blogsList]);
     console.log(blogsList)
     if (blogsList) {
         const blogContentCardList = blogsList.map((blog) => (
@@ -21,9 +21,7 @@ export default function BlogContentPage() {
                 />
             </>
         )
-    }else{
+    } else {
         return <></>;
     }
-
-
 }
