@@ -1,21 +1,22 @@
 import { text, withKnobs } from '@storybook/addon-knobs'
 import React from 'react'
-import CustomMenuItem from '../CustomMenuItem'
-
+import CustomTypography from '../Typography'
 
 export default {
-    title: 'atoms/CustomMenuItem',
+    title: 'atoms/CustomTypography',
     decorators: [withKnobs]
 }
 
 export const Basic = () => {
     return (
-        <CustomMenuItem />
+        <CustomTypography />
     )
 }
-
 export const Label = () => {
     return (
-        <CustomMenuItem label={text('Label', 'Type here...')}/>
+        <CustomTypography>
+            {text('Label', 'Type here...')}
+        </CustomTypography>
+
     )
 }

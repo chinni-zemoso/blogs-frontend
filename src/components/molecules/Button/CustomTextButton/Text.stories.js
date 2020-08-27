@@ -3,7 +3,7 @@ import TextButton from './Text'
 import { withKnobs } from '@storybook/addon-knobs'
 
 export default {
-    title: 'molecules/Buttons/TextButtom',
+    title: 'molecules/Buttons/CustomTextButton',
     decorators: [withKnobs],
     argTypes: {
         label: { control: 'text' },

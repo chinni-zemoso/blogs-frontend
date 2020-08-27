@@ -1,0 +1,14 @@
+{
+  "hotIcon": {
+    "label": "Hot"
+  },
+  "newIcon": {
+    "label": "New"
+  },
+  "topIcon": {
+    "label": "Top"
+  },
+  "risingIcon": {
+    "label": "Rising"
+  }
+}

@@ -135,7 +135,35 @@ const theme = createMuiTheme({
         }
     },
     overrides: {
-        
+        MuiIconButton: {
+            root: {
+                '&:hover': {
+                    color: "#000"
+                },
+                "&:focus":
+                {
+                    color: "#0079d3"
+                },
+                padding: '10px',
+            }
+        },
+        MuiToggleButton: {
+            root: {
+                'border': '0px',
+                '&:hover': {
+                    backgroundColor: "white",
+                    color: "white"
+                },
+                '&:selected': {
+                    backgroundColor: "white",
+                    color: "white",
+                },
+                padding: '0px'
+            },
+            label: {
+                'background': 'white',
+            },
+        },
     },
 });
 

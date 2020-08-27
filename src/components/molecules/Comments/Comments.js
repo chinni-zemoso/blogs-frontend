@@ -25,7 +25,7 @@ export default function Comment(props) {
         {comments.map(comment => {
           return (
             <React.Fragment key={comment.id}>
-              <ListItem key={comment.id} >
+              <ListItem key={comment.id}>
                 <ListItemAvatar>
                   <CustomAvatar avatarUrl={comment.avatarUrl} />
                 </ListItemAvatar>

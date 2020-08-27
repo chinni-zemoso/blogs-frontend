@@ -1,8 +1,11 @@
 import React from 'react'
-import { Typography, Grid, makeStyles } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
+import Typography from '../../atoms/Typography'
+import Image from '../../atoms/Image'
 import AuthorWithAvatar from '../../molecules/Author';
-import TextButton from '../../molecules/Button/TextButton/Text';
+import CustomTextButton from '../../molecules/Button/CustomTextButton/Text';
 import Comments from '../../molecules/Comments/Comments'
+
 const useStyles = makeStyles((theme) => ({
     root: {
         display: "flex",
@@ -11,11 +14,12 @@ const useStyles = makeStyles((theme) => ({
         flexWrap: "nowrap",
         alignContent: "space-between",
         width: "550px",
-        // height: 'auto',
+        height: 'auto',
         borderRadius: "6px",
         border: "solid 3px #dfe3eb",
         boxShadow: `0px 2px 4px ${theme.palette.grey[300]}`,
-        paddingBottom: '12px'
+        paddingBottom: '12px',
+        backgroundcolor: 'grey',
     },
     cover: {
         width: "530px",
@@ -53,12 +57,12 @@ export default function BlogContentCard(props) {
     return (
         <Grid container direction="column" alignContent="center" className={classes.root} >
             <Grid item xs>
-                <img className={classes.cover} src={props.image} />
+                <Image src={props.image} className={classes.cover}/>
                 <Typography variant='subtitle1' className={classes.title}>
                     {props.title}
                 </Typography>
             </Grid>
-            <Grid item xs className={classes.authorWithAvatar}  >
+            <Grid item xs className={classes.authorWithAvatar}>
                 <AuthorWithAvatar
                     avatarUrl={props.avatarUrl}
                     author={props.author}
@@ -69,8 +73,8 @@ export default function BlogContentCard(props) {
                     {props.body}
                 </Typography>
             </Grid>
-            <Grid item xs style={{ marginLeft: '5px' }}>
-                <TextButton />
+            <Grid item xs >
+                <CustomTextButton label='Read more...' style={{ marginLeft: '5px', fontSize: '12px', color: 'buttonText', textTransform: 'none' }} />
             </Grid>
             <Grid item xs style={{ marginLeft: '12px' }}>
                 <Typography variant='subtitle1'>
