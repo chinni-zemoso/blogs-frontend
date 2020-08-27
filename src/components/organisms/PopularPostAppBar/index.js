@@ -9,6 +9,7 @@ import MultipleIconsButton from '../../molecules/Button/CustomMultipleIconButton
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import { Link } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,17 +47,34 @@ export default function PopularPostAppBar() {
         <Grid container className={classes.root} spacing={2}>
           <Grid item xs={11}>
             <ToggleButtonGroup value={alignment} exclusive onChange={handleAlignment} className={classes.toggelGroup}>
-              <ToggleButton value="hot" aria-label="left aligned" className={classes.toggleButton} onClick={handleOnClick}>
-                <IconTextButton icon={<Whatshot />} label={IconLabels.hotIcon.label} />
+              <ToggleButton value="hot" aria-label="left aligned" className={classes.toggleButton} >
+                <Router>
+                  <Link to='/hot' style={{ textDecoration: 'none' }}>
+                    <IconTextButton icon={<Whatshot />} label={IconLabels.hotIcon.label} />
+                  </Link>
+                </Router>
               </ToggleButton>
               <ToggleButton value="new" aria-label="centered" className={classes.toggleButton}>
-                <IconTextButton icon={<NewReleases />} label={IconLabels.newIcon.label} />
+                <Router>
+                  <Link to='/new' style={{ textDecoration: 'none' }}>
+                    <IconTextButton icon={<NewReleases />} label={IconLabels.newIcon.label} />
+                  </Link>
+                </Router>
               </ToggleButton>
               <ToggleButton value="top" aria-label="right aligned" className={classes.toggleButton}>
-                <IconTextButton icon={<Equalizer />} label={IconLabels.topIcon.label} />
+                <Router>
+                  <Link to='/top' style={{ textDecoration: 'none' }}>
+                    <IconTextButton icon={<Equalizer />} label={IconLabels.topIcon.label} />
+                  </Link>
+                </Router>
+
               </ToggleButton>
               <ToggleButton value="rising" aria-label="justified" className={classes.toggleButton}>
-                <IconTextButton icon={<TrendingUp />} label={IconLabels.risingIcon.label} />
+                <Router>
+                  <Link to='/rising' style={{ textDecoration: 'none' }}>
+                    <IconTextButton icon={<TrendingUp />} label={IconLabels.risingIcon.label} />
+                  </Link>
+                </Router>
               </ToggleButton>
             </ToggleButtonGroup>
           </Grid>

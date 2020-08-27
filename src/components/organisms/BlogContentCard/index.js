@@ -21,13 +21,6 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom: '12px',
         backgroundcolor: 'grey',
     },
-    cover: {
-        width: "530px",
-        height: "190px",
-        marginTop: "15px",
-        marginLeft: "6px",
-        marginRight: "8px"
-    },
     title: {
         width: "530px",
         height: "28px",
@@ -57,7 +50,7 @@ export default function BlogContentCard(props) {
     return (
         <Grid container direction="column" alignContent="center" className={classes.root} >
             <Grid item xs>
-                <Image src={props.image} className={classes.cover}/>
+                <Image src={props.image}/>
                 <Typography variant='subtitle1' className={classes.title}>
                     {props.title}
                 </Typography>

@@ -6,6 +6,7 @@ import PopularPostAppBar from './components/organisms/PopularPostAppBar'
 import './App.css';
 import theme from '../src/utils/theme';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
+// import { withRouter,connect } from "react-router";
 
 function App() {
   return (
@@ -14,8 +15,12 @@ function App() {
       <PopularPostAppBar />
       <Router>
         <Switch>
-          <Route path="/" render={() => <BlogContentPage />} />
-          <Route path="/home" render={() => <BlogContentPage />} />
+          {/* <Route path="/hot" component={() => <BlogContentPage />} /> */}
+          <Route path="/" exact render={() => <BlogContentPage />} />
+          <Route path="/hot" exact render={() => <BlogContentPage />} />
+          <Route path="/new" exact render={() => <div>Yet to design</div>} />
+          <Route path="/top" exact render={() => <div>Yet to design</div>} />
+          <Route path="/rising" exact render={() => <div>Yet to design</div>} />
         </Switch>
       </Router>
       {/* <PrimarySearchAppBar /> */}
@@ -25,3 +30,4 @@ function App() {
 }
 
 export default App;
+// export default withRouter(connect(mapStateToProps, { f, g })(App));

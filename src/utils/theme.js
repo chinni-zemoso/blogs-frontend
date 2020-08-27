@@ -144,6 +144,10 @@ const theme = createMuiTheme({
                 {
                     color: "#0079d3"
                 },
+                '&:selected': {
+                    backgroundColor: "red",
+                    color: "red",
+                },
                 padding: '10px',
             }
         },
@@ -162,6 +166,14 @@ const theme = createMuiTheme({
             },
             label: {
                 'background': 'white',
+            },
+        },
+        MuiToggleButtonGroup: {
+            groupedHorizontal: {
+                '&:not(:first-child)': {
+                    marginLeft: '0px',
+                    borderLeft: '0px',
+                },
             },
         },
     },
