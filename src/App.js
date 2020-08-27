@@ -16,11 +16,11 @@ function App() {
       <Router>
         <Switch>
           {/* <Route path="/hot" component={() => <BlogContentPage />} /> */}
+          <Route path="/" exact render={() => <BlogContentPage />} />
           <Route path="/hot" exact render={() => <BlogContentPage />} />
           <Route path="/new" exact render={() => <div>Yet to design</div>} />
           <Route path="/top" exact render={() => <div>Yet to design</div>} />
           <Route path="/rising" exact render={() => <div>Yet to design</div>} />
-          <Route path="/" render={() => <BlogContentPage />} />
         </Switch>
       </Router>
       {/* <PrimarySearchAppBar /> */}
