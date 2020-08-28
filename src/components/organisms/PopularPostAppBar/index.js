@@ -9,7 +9,6 @@ import MultipleIconsButton from '../../molecules/Button/CustomMultipleIconButton
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import { Link } from 'react-router-dom'
-import { BrowserRouter as Router } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default function PopularPostAppBar() {
+function PopularPostAppBar() {
   const classes = useStyles()
   const [alignment, setAlignment] = React.useState('hot');
 
@@ -36,53 +35,41 @@ export default function PopularPostAppBar() {
     setAlignment(newAlignment);
   };
 
-  const handleOnClick = () => {
-    console.log('onclick')
-  }
-
-  // const labelProps = { variant: 'h1' }
   return (
-    <AppBar position='sticky' color='inherit'>
-      <Toolbar >
-        <Grid container className={classes.root} spacing={2}>
-          <Grid item xs={11}>
-            <ToggleButtonGroup value={alignment} exclusive onChange={handleAlignment} className={classes.toggelGroup}>
-              <ToggleButton value="hot" aria-label="left aligned" className={classes.toggleButton} >
-                <Router>
-                  <Link to='/hot' style={{ textDecoration: 'none' }}>
-                    <IconTextButton icon={<Whatshot />} label={IconLabels.hotIcon.label} />
-                  </Link>
-                </Router>
-              </ToggleButton>
-              <ToggleButton value="new" aria-label="centered" className={classes.toggleButton}>
-                <Router>
-                  <Link to='/new' style={{ textDecoration: 'none' }}>
-                    <IconTextButton icon={<NewReleases />} label={IconLabels.newIcon.label} />
-                  </Link>
-                </Router>
-              </ToggleButton>
-              <ToggleButton value="top" aria-label="right aligned" className={classes.toggleButton}>
-                <Router>
-                  <Link to='/top' style={{ textDecoration: 'none' }}>
-                    <IconTextButton icon={<Equalizer />} label={IconLabels.topIcon.label} />
-                  </Link>
-                </Router>
-
-              </ToggleButton>
-              <ToggleButton value="rising" aria-label="justified" className={classes.toggleButton}>
-                <Router>
-                  <Link to='/rising' style={{ textDecoration: 'none' }}>
-                    <IconTextButton icon={<TrendingUp />} label={IconLabels.risingIcon.label} />
-                  </Link>
-                </Router>
-              </ToggleButton>
-            </ToggleButtonGroup>
+      <AppBar position='sticky' color='inherit'>
+        <Toolbar >
+          <Grid container className={classes.root} spacing={2}>
+            <Grid item xs={11}>
+              <ToggleButtonGroup value={alignment} exclusive onChange={handleAlignment} className={classes.toggelGroup}>
+                <ToggleButton value="hot" aria-label="left aligned" className={classes.toggleButton} >
+                    <Link to='/hot' style={{ textDecoration: 'none' }}>
+                      <IconTextButton icon={<Whatshot />} label={IconLabels.hotIcon.label} />
+                    </Link>
+                </ToggleButton>
+                <ToggleButton value="new" aria-label="centered" className={classes.toggleButton}>
+                    <Link to='/new' style={{ textDecoration: 'none' }}>
+                      <IconTextButton icon={<NewReleases />} label={IconLabels.newIcon.label} />
+                    </Link>
+                </ToggleButton>
+                <ToggleButton value="top" aria-label="right aligned" className={classes.toggleButton}>
+                    <Link to='/top' style={{ textDecoration: 'none' }}>
+                      <IconTextButton icon={<Equalizer />} label={IconLabels.topIcon.label} />
+                    </Link>
+                </ToggleButton>
+                <ToggleButton value="rising" aria-label="justified" className={classes.toggleButton}>
+                    <Link to='/rising' style={{ textDecoration: 'none' }}>
+                      <IconTextButton icon={<TrendingUp />} label={IconLabels.risingIcon.label} />
+                    </Link>
+                </ToggleButton>
+              </ToggleButtonGroup>
+            </Grid>
+            <Grid item xs={1} style={{ marginLeft: 'auto', padding: '0px' }} >
+              <MultipleIconsButton outerIcon={<Menu />} innerIcon={<ArrowDropDown />} />
+            </Grid>
           </Grid>
-          <Grid item xs={1} style={{ marginLeft: 'auto', padding: '0px' }} >
-            <MultipleIconsButton outerIcon={<Menu />} innerIcon={<ArrowDropDown />} />
-          </Grid>
-        </Grid>
-      </Toolbar>
-    </AppBar>
+        </Toolbar>
+      </AppBar>
   )
 }
+
+export default PopularPostAppBar;

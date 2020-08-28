@@ -6,14 +6,13 @@ import PopularPostAppBar from './components/organisms/PopularPostAppBar'
 import './App.css';
 import theme from '../src/utils/theme';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
-// import { withRouter,connect } from "react-router";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <PopularPostAppBar />
       <Router>
+        <PopularPostAppBar />
         <Switch>
           {/* <Route path="/hot" component={() => <BlogContentPage />} /> */}
           <Route path="/" exact render={() => <BlogContentPage />} />
@@ -30,4 +29,3 @@ function App() {
 }
 
 export default App;
-// export default withRouter(connect(mapStateToProps, { f, g })(App));
