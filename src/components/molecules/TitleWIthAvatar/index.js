@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function AuthorWithAvatar(props) {
+export default function TitleWithAvatar(props) {
   const classes = useStyles();
   return (
     <div className={classes.container}>

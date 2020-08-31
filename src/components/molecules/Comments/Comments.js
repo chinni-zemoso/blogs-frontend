@@ -27,7 +27,7 @@ export default function Comment(props) {
             <React.Fragment key={comment.id}>
               <ListItem key={comment.id}>
                 <ListItemAvatar>
-                  <CustomAvatar avatarUrl={comment.avatarUrl} />
+                  <CustomAvatar avatarUrl={comment.avatarUrl} size='small'/>
                 </ListItemAvatar>
                 <ListItemText>
                   <Typography variant='body1'>

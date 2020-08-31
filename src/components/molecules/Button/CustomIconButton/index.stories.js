@@ -1,6 +1,7 @@
 import React from 'react'
 import { text, withKnobs } from '@storybook/addon-knobs'
 import CustomIconButton from '../CustomIconButton'
+import WhatshotIcon from '@material-ui/icons/Whatshot';
 
 export default {
     title: 'molecules/Buttons/CustomIconButton',
@@ -9,24 +10,8 @@ export default {
 
 export const Basic = () => {
     return (
-        <CustomIconButton />
+        <CustomIconButton
+            label={text('Label', 'Hot')}
+            icon={<WhatshotIcon />} />
     )
 }
-export const Label = () => {
-    return (
-        <CustomIconButton label={text('Label', 'Type here...')} />
-    )
-}
-// export const WithIcon = () => {
-//     const icon = <CustomHotIcon />
-//     return (
-//         <CustomIconButton icon={icon} label={text('Label', 'Type here...')} />
-//     )
-// }
-// export const Label = () => {
-//     return (
-//         <CustomTypography>
-//             {text('Label', 'Type here...')}
-//         </CustomTypography>
-//     )
-// }

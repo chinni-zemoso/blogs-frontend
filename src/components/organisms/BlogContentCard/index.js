@@ -2,8 +2,8 @@ import React from 'react'
 import { Grid, makeStyles } from "@material-ui/core";
 import Typography from '../../atoms/Typography'
 import Image from '../../atoms/Image'
-import AuthorWithAvatar from '../../molecules/Author';
-import CustomTextButton from '../../molecules/Button/CustomTextButton/Text';
+import TitleWithAvatar from '../../molecules/TitleWIthAvatar';
+import CustomButton from '../../molecules/Button/CustomButton';
 import Comments from '../../molecules/Comments/Comments'
 
 const useStyles = makeStyles((theme) => ({
@@ -40,6 +40,11 @@ const useStyles = makeStyles((theme) => ({
         'padding-bottom': "5px",
         'padding-top': "5px",
         width: "530px",
+    }, textButton: {
+        marginLeft: '5px',
+        fontSize: '12px',
+        color: 'green',
+        textTransform: 'none',
     }
 }));
 
@@ -50,13 +55,13 @@ export default function BlogContentCard(props) {
     return (
         <Grid container direction="column" alignContent="center" className={classes.root} >
             <Grid item xs>
-                <Image src={props.image}/>
+                <Image src={props.image} />
                 <Typography variant='subtitle1' className={classes.title}>
                     {props.title}
                 </Typography>
             </Grid>
             <Grid item xs className={classes.authorWithAvatar}>
-                <AuthorWithAvatar
+                <TitleWithAvatar
                     avatarUrl={props.avatarUrl}
                     author={props.author}
                     size={props.size} />
@@ -67,7 +72,7 @@ export default function BlogContentCard(props) {
                 </Typography>
             </Grid>
             <Grid item xs >
-                <CustomTextButton label='Read more...' style={{ marginLeft: '5px', fontSize: '12px', color: 'buttonText', textTransform: 'none' }} />
+                <CustomButton label='Read more...' className={classes.textButton} />
             </Grid>
             <Grid item xs style={{ marginLeft: '12px' }}>
                 <Typography variant='subtitle1'>

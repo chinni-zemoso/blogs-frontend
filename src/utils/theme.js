@@ -176,6 +176,11 @@ const theme = createMuiTheme({
                 },
             },
         },
+        MuiButton:{
+            label:{
+                'textTransform':'none',
+            },
+        },
     },
 });
 

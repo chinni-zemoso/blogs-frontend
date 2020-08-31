@@ -74,6 +74,7 @@
     "react-hot-loader": "^4.12.21",
     "react-router-dom": "^5.2.0",
     "react-test-renderer": "^16.13.1",
+    "standard": "^14.3.4",
     "start": "^5.1.0"
   }
 }

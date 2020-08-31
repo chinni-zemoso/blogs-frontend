@@ -9,17 +9,13 @@ const props = {
 
 
 export default {
-  title: 'molecules/AuthorWithAvatar',
+  title: 'molecules/TitleWithAvatar',
   decorators:[withKnobs],
 };
 
-export const WithKnobs = () => (
+export const Basic = () => (
   <AuthorWithAvatar
     author={text('Author', 'James Gosling')}
     avatarUrl={text('AvatarURL', 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50')}
   />
-);
-
-export const WithoutKnobs = () => (
-  <AuthorWithAvatar {...props} />
 );

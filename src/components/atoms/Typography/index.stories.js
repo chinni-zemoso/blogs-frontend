@@ -9,11 +9,6 @@ export default {
 
 export const Basic = () => {
     return (
-        <CustomTypography />
-    )
-}
-export const Label = () => {
-    return (
         <CustomTypography>
             {text('Label', 'Type here...')}
         </CustomTypography>

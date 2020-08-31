@@ -4,8 +4,10 @@ import BlogContentCard from '../../components/organisms/BlogContentCard';
 import blogsList from '../../utils/blogList.json'
 import { useHttp } from '../../utils/hooks/http'
 import { urls } from '../../utils/serviceConstants'
+import EmptyState from '../../components/organisms/EmptyState'
+import emptyScreenDataJson from '../../utils/emptyScreenData.json'
 
-export default function BlogContentPage() {
+export default function HotPosts() {
     console.log(blogsList)
     if (blogsList) {
         const blogContentCardList = blogsList.map((blog) => (
@@ -19,6 +21,9 @@ export default function BlogContentPage() {
             </>
         )
     } else {
-        return <></>;
+        return
+        <>
+            <EmptyState {...emptyScreenDataJson}/>
+        </>;
     }
 }

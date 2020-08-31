@@ -1,7 +1,10 @@
 import React from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import BlogContentPage from './pages/BookContentPage';
+import HotPosts from './pages/HotPosts';
+import NewPosts from './pages/NewPosts';
+import TopPosts from './pages/TopPosts';
+import RisingPosts from './pages/RisingPosts';
 import PopularPostAppBar from './components/organisms/PopularPostAppBar'
 import './App.css';
 import theme from '../src/utils/theme';
@@ -14,16 +17,12 @@ function App() {
       <Router>
         <PopularPostAppBar />
         <Switch>
-          {/* <Route path="/hot" component={() => <BlogContentPage />} /> */}
-          <Route path="/" exact render={() => <BlogContentPage />} />
-          <Route path="/hot" exact render={() => <BlogContentPage />} />
-          <Route path="/new" exact render={() => <div>Yet to design</div>} />
-          <Route path="/top" exact render={() => <div>Yet to design</div>} />
-          <Route path="/rising" exact render={() => <div>Yet to design</div>} />
+          <Route path="/hot" exact render={() => <HotPosts />} />
+          <Route path="/new" exact render={() => <NewPosts />} />
+          <Route path="/top" exact render={() => <TopPosts />} />
+          <Route path="/rising" exact render={() => <RisingPosts />} />
         </Switch>
       </Router>
-      {/* <PrimarySearchAppBar /> */}
-      {/* <BlogContentPage /> */}
     </ThemeProvider>
   );
 }
