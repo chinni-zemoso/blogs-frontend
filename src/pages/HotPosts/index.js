@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import BlogContentTemplate from '../../components/templates/BookContentTemplate';
 import BlogContentCard from '../../components/organisms/BlogContentCard';
 import blogsList from '../../utils/blogList.json'
@@ -6,13 +6,28 @@ import { useHttp } from '../../utils/hooks/http'
 import { urls } from '../../utils/serviceConstants'
 import EmptyState from '../../components/organisms/EmptyState'
 import emptyScreenDataJson from '../../utils/emptyScreenData.json'
+// import frameJsonObject from '../../utils/FramingJsonObject'
+import { getAllPosts } from '../../services/BlogPostServices'
 
 export default function HotPosts() {
+    console.log('HP--blogsList')
     console.log(blogsList)
-    if (blogsList) {
-        const blogContentCardList = blogsList.map((blog) => (
-            <BlogContentCard {...blog} />
+    const [framedData, setFramedData] = useState([]);
+    useEffect(() => {
+        async function fetchData() {
+            const framedData = await getAllPosts()
+            setFramedData(framedData)
+        }
+        fetchData();
+    }, [])
+
+    if (framedData) {
+        console.log('HP--json-');
+        console.log(framedData);
+        const blogContentCardList = framedData.map((data) => (
+            <BlogContentCard {...data} />
         ))
+
         return (
             <>
                 <BlogContentTemplate
@@ -21,9 +36,10 @@ export default function HotPosts() {
             </>
         )
     } else {
-        return
+        return(
         <>
-            <EmptyState {...emptyScreenDataJson}/>
-        </>;
+            <EmptyState {...emptyScreenDataJson} />
+        </>);
     }
 }
+

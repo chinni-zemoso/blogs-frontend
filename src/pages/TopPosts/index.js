@@ -9,7 +9,7 @@ import emptyScreenDataJson from '../../utils/emptyScreenData.json'
 
 export default function TopPosts() {
     console.log(blogsList)
-    if (blogsList) {
+    if (!blogsList) {
         const blogContentCardList = blogsList.map((blog) => (
             <BlogContentCard {...blog} />
         ))

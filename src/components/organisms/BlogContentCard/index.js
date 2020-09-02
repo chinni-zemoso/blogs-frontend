@@ -4,7 +4,7 @@ import Typography from '../../atoms/Typography'
 import Image from '../../atoms/Image'
 import TitleWithAvatar from '../../molecules/TitleWIthAvatar';
 import CustomButton from '../../molecules/Button/CustomButton';
-import Comments from '../../molecules/Comments/Comments'
+import Comments from '../../organisms/Comments/Comments'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -62,8 +62,8 @@ export default function BlogContentCard(props) {
             </Grid>
             <Grid item xs className={classes.authorWithAvatar}>
                 <TitleWithAvatar
-                    avatarUrl={props.avatarUrl}
-                    author={props.author}
+                    image={props.userImage}
+                    title={`by ${props.userName} on ${props.postedOn}`}
                     size={props.size} />
             </Grid>
             <Grid item xs>

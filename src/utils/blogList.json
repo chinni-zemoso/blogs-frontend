@@ -1,49 +1,31 @@
 [
   {
-    "image": "https://i.ibb.co/jbn4YdL/ML-java.png",
-    "title": "Instant Java Leanrning",
-    "author": "James Gosling on 12-Aug-2019",
-    "avatarUrl": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
-    "body": "Java is among the most popular programming languages out there, mainly because of how versatile and compatible it is. Java can be used for a large number of things, including software development, mobile applications, and large systems development. As of 2019, 88% market share of all smartphones run on Android, the mobile operating system written in Java. Knowing Java opens a great deal of doors for you as a developer.",
+    "image": "http://dummyimage.com/500x250.png/cc0000/ffffff",
+    "userName": "Kahaleel",
+    "userImage":"https://robohash.org/velautemdolores.jpg?size=40x40&set=set1",
+    "title": "pellentesque quisque porta volutpat",
+    "body": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.",
+    "postedOn": "02-Apr-2020",
     "comments": [
       {
-        "id": "2",
-        "name": "Rahul",
-        "email": "rahul@gmail.com",
-        "body": "Thank you for the post"
+        "id": 1,
+        "postId": 1,
+        "userId": 2,
+        "name": "Caspar",
+        "email": "ciskower1@reddit.com",
+        "image": "https://robohash.org/officiaetet.jpg?size=40x40&set=set1",
+        "body": "aenean sit amet justo morbi ut odio cras mi pede malesuada",
+        "postedOn": "2020-06-23 04:08:37"
       },
       {
-        "id": "1",
-        "name": "Mishra Tripathi",
-        "email": "mishra.t@gmail.com",
-        "body": "Nice post, thank you "
-      },
-      {
-        "id": "3",
-        "name": "Tirupathi Panigrahi",
-        "email": "tire.pani@gmail.com",
-        "body": "Makes things clear"
-      }
-    ]
-  },
-  {
-    "image": "https://i.ibb.co/p1vf3cv/java-learning.png",
-    "title": "Basics of java Online",
-    "author": "Joshua Bloch on 20-Jun-2020",
-    "avatarUrl": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?f=y",
-    "body": "If you are thinking that self-learning Java development through blogs, online courses and tutorials is a waste of time, you might want to rethink that… What creates high demand for Java developers is the versatility of the Java language; it can easily serve for any purpose. Good Java developers can make a lot of money and most of them admit that they basically gained their skills and knowledge through online resources, especially blogs.",
-    "comments": [
-      {
-        "id": "2",
-        "name": "Appato",
-        "email": "appoto.r@gmail.com",
-        "body": "Great post, thankk you "
-      },
-      {
-        "id": "1",
-        "name": "Maharana suresh",
-        "email": "suresh.m@gmail.com",
-        "body": "The thought of java learning makes more clear about the content provided in this post"
+        "id": 2,
+        "postId": 1,
+        "userId": 3,
+        "name": "Davy",
+        "email": "dmasding2@craigslist.org",
+        "image": "https://robohash.org/eumveritatisqui.bmp?size=40x40&set=set1",
+        "body": "amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam",
+        "postedOn": "2020-01-22 10:12:53"
       }
     ]
   }

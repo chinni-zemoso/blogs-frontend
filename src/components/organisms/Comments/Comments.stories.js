@@ -5,7 +5,7 @@ import Comments from './Comments';
 
 
 export default {
-  title: 'molecules/Comments',
+  title: 'organisms/Comments',
   decorators: [withKnobs],
 };
 
