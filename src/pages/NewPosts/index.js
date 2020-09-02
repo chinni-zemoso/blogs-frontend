@@ -10,10 +10,12 @@ import emptyScreenDataJson from '../../utils/emptyScreenData.json'
 export default function NewPosts() {
     console.log(blogsList)
     const blogsList = [];
-    if (!blogsList) {
-        const blogContentCardList = blogsList.map((blog) => (
-            <BlogContentCard {...blog} />
-        ))
+
+
+    if (blogsList) {
+        const blogContentCardList = blogsList.map((blog) => {
+           return <BlogContentCard {...blog} />
+        })
         return (
             <>
                 <BlogContentTemplate

@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CustomAvatar(props) {
   const classes = useStyles(props);
-  return <Avatar alt="image.jpg" src={props.avatarUrl}
+  return <Avatar alt="image.jpg" src={props.image}
     className={(props.size === 'small') ? classes.smallAvatar : {}}
   />
 

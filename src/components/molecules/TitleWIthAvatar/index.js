@@ -22,7 +22,7 @@ export default function TitleWithAvatar(props) {
   return (
     <div className={classes.container}>
       <CustomAvatar {...props} />
-      <Typography className={classes.by}> by {props.author}</Typography>
+      <Typography className={classes.by}>{props.title}</Typography>
     </div >
   );
 

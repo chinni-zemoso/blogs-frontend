@@ -1,7 +1,9 @@
 // export const blogsGETURL = '';
 
-const baseUrl = 'http://localhost:8080'
+const baseUrl = 'http://localhost:3000'
 
 export const urls = {
-  getAllBlogsUrl: baseUrl + '/blogs'
+  getAllPostsURL: baseUrl + '/posts?_embed=comments&_expand=user',
+  getAllUsersURL: baseUrl + '/users',
+  storePostURL: baseUrl+'/posts'
 }
