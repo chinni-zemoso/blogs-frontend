@@ -26,7 +26,7 @@ const props = {
 };
 
 export default {
-  title: 'organism/BlogContentCard',
+  title: 'organisms/BlogContentCard',
   decorators: [withKnobs],
 };
 

@@ -2,8 +2,8 @@
 
 const baseUrl = 'http://localhost:3000'
 
-export const urls = {
+export const URL = {
   getAllPostsURL: baseUrl + '/posts?_embed=comments&_expand=user',
   getAllUsersURL: baseUrl + '/users',
-  storePostURL: baseUrl+'/posts'
+  storeCommentsURL: baseUrl+'/comments'
 }
